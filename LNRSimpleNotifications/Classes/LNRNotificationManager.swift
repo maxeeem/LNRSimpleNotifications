@@ -29,7 +29,9 @@ public enum LNRNotificationDuration: NSTimeInterval {
 }
 
 public class LNRNotificationManager: NSObject {
-    
+    // provide LNRNotificationView class or it's subclass
+    var NotificationViewClass = LNRNotificationView.self
+  
     /** Shows a notification
      *  @param title The title of the notification view
      *  @param body The text that is displayed underneath the title
@@ -42,7 +44,7 @@ public class LNRNotificationManager: NSObject {
                     self.showNotification(title, body: body, callback: callback)
                 })
             } else {
-                let notification = LNRNotificationView(title: title, body: body, icon: self.notificationsIcon, duration: self.notificationsDefaultDuration, callback: callback, position: self.notificationsPosition, notificationManager: self)
+                let notification = self.NotificationViewClass.init(title: title, body: body, icon: self.notificationsIcon, duration: self.notificationsDefaultDuration, callback: callback, position: self.notificationsPosition, notificationManager: self)
                 self.displayNotification(notification)
             }
         }
