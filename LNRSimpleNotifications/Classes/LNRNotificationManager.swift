@@ -30,7 +30,7 @@ public enum LNRNotificationDuration: NSTimeInterval {
 
 public class LNRNotificationManager: NSObject {
     // provide LNRNotificationView class or it's subclass
-    var NotificationViewClass = LNRNotificationView.self
+    public var NotificationViewClass: LNRNotificationView.Type = LNRNotificationView.self
   
     /** Shows a notification
      *  @param title The title of the notification view
