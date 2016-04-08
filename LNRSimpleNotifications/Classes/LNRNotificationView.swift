@@ -50,7 +50,7 @@ public class LNRNotificationView: UIView, UIGestureRecognizerDelegate {
      *  @param dismissingEnabled Should this notification be dismissed when the user taps/swipes it?
      */
     
-    init(title: String, body: String?, icon: UIImage?, duration: NSTimeInterval, callback: LNRNotificationOperationCompletionBlock?, position:LNRNotificationPosition, notificationManager: LNRNotificationManager) {
+    required public init(title: String, body: String?, icon: UIImage?, duration: NSTimeInterval, callback: LNRNotificationOperationCompletionBlock?, position:LNRNotificationPosition, notificationManager: LNRNotificationManager) {
         
         self.title = title
         self.duration = duration
